@@ -9,20 +9,22 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/dieContainer"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent=".4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/rollDiceButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ROLL"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_die" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/buttonContainer"
+        android:name="edu.temple.dicethrow.BlankFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout="@layout/fragment_blank" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,10 +9,13 @@ import android.widget.TextView
 import kotlin.random.Random
 
 const val DIESIDE = "sidenumber"
+const val DIEROLL = "prev_roll"
 
 class DieFragment : Fragment() {
 
     lateinit var dieTextView: TextView
+
+    var rollValue  = 0
 
     var dieSides: Int = 6
 
@@ -37,14 +40,25 @@ class DieFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        throwDie()
-        view.setOnClickListener{
+
+        savedInstanceState?.run {
+            rollValue = getInt(DIEROLL)
+        }
+        if (rollValue == 0) {
             throwDie()
+        } else {
+            dieTextView.text = String.format(rollValue.toString())// to update text view as rollValue has changed
         }
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt(DIEROLL, rollValue)
+    }
+
     fun throwDie() {
-        dieTextView.text = (Random.nextInt(dieSides) + 1).toString()
+        rollValue = Random.nextInt(dieSides) + 1
+        dieTextView.text = String.format(rollValue.toString())
     }
 
     companion object {
