@@ -13,11 +13,11 @@ const val DIEROLL = "prev_roll"
 
 class DieFragment : Fragment() {
 
-    lateinit var dieTextView: TextView
+    private lateinit var dieTextView: TextView
 
-    var rollValue  = 0
+    private var rollValue  = 0
 
-    var dieSides: Int = 6
+    private var dieSides: Int = 6
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,7 +47,8 @@ class DieFragment : Fragment() {
         if (rollValue == 0) {
             throwDie()
         } else {
-            dieTextView.text = String.format(rollValue.toString())// to update text view as rollValue has changed
+            dieTextView.text = String.format(rollValue.toString())
+            // Update text view as rollValue changes
         }
     }
 
@@ -70,7 +71,6 @@ class DieFragment : Fragment() {
             fragment.arguments = bundle
             return fragment
         }
-
     }
 
 }

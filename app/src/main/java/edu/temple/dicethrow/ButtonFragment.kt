@@ -1,5 +1,6 @@
 package edu.temple.dicethrow
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +10,13 @@ import android.widget.Button
 
 
 class ButtonFragment : Fragment() {
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (context !is ButtonInterface) {
+            throw Exception("Context Activity is not implementing expected behavior")
+        }
+    }
 
 
     override fun onCreateView(inflater: LayoutInflater,
