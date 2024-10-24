@@ -8,14 +8,14 @@ import android.view.ViewGroup
 import android.widget.Button
 
 
-class BlankFragment : Fragment() {
+class ButtonFragment : Fragment() {
 
 
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_blank, container, false).apply {
+        return inflater.inflate(R.layout.fragment_button, container, false).apply {
             findViewById<Button>(R.id.button).setOnClickListener {
                 (requireActivity() as ButtonInterface).buttonClicked()
             }
