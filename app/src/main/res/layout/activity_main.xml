@@ -19,12 +19,12 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/buttonContainer"
-        android:name="edu.temple.dicethrow.BlankFragment"
+        android:name="edu.temple.dicethrow.ButtonFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="150dp"
         android:layout_marginBottom="300dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout="@layout/fragment_blank" />
+        tools:layout="@layout/fragment_button" />
 </androidx.constraintlayout.widget.ConstraintLayout>
